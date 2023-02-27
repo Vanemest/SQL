@@ -1,0 +1,24 @@
+-- create a birds store database
+
+create table Birds(id Integer primary key, name text, price integer, aisle integer, quantity integer);
+
+insert into birds values(1, "Budgies", 50, 1, 3);
+insert into birds values(2, "Parakeets", 60, 2, 1);
+insert into birds values(3, "Finch", 70, 3, 10);
+insert into birds values(4, "Canary", 80, 4, 5);
+insert into birds values(5, "Cockatiel", 100, 5, 1);
+insert into birds values(6, "Conure", 45, 6, 2);
+insert into birds values(7, "Lovebirds", 120, 7, 6);
+insert into birds values(8, "Parrots", 200, 8, 1);
+insert into birds values(9, "Cage", 35, 9, 20);
+insert into birds values(10, "Seeds", 15, 10, 50);
+insert into birds values(11, "Toys", 5, 11, 50);
+insert into birds values(12, "Millet",3, 12, 60);
+insert into birds values(13, "Snack", 5, 13, 40);
+insert into birds values(14, "Bird Gym", 25, 14, 10);
+insert into birds values(15, "Plants", 10, 15, 15);
+
+-- order by price using select
+SELECT * FROM birds ORDER BY price
+
+
