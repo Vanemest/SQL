@@ -1,0 +1,72 @@
+/* Create a table about famous people and what they do here */
+
+Create Table Avengers (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,        character_id integer, name TEXT, popularity INTEGER); 
+
+INSERT INTO Avengers (character_id, name, popularity)
+    VALUES (1, "Iron Man", 1);
+INSERT INTO Avengers (character_id, name,  popularity)
+     VALUES (2, "Thor", 2);
+INSERT INTO Avengers (character_id, name,  popularity)
+     VALUES (3, "Captain America", 3);
+INSERT INTO Avengers (character_id, name,  popularity)
+     VALUES (4, "Scarlet Witch", 7);
+INSERT INTO Avengers (character_id, name,  popularity)
+    VALUES (5, "Captain Marvel", 11);
+INSERT INTO Avengers (character_id, name,  popularity)   
+    VALUES (5, "Black Panther", 6);
+INSERT INTO Avengers (character_id, name,  popularity)
+    VALUES (6, "Doctor Strange", 4);
+INSERT INTO Avengers (character_id, name,  popularity)
+    VALUES (7, "spiderman", 3);
+INSERT INTO Avengers (character_id, name,  popularity)
+    VALUES (8, "Hulk", 8);
+INSERT INTO Avengers (character_id, name,  popularity)
+    VALUES (9, "Black Widow", 5);
+INSERT INTO Avengers (character_id, name,  popularity) 
+    VALUES (10, "Vision", 10);
+INSERT INTO Avengers (character_id, name,  popularity)   
+    VALUES (11," Hawkeye", 9);
+
+Create Table Superpowers (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,        character_name TEXT, powers TEXT, power_ranking INTEGER); 
+
+INSERT INTO Superpowers (character_name, powers,power_ranking)
+    VALUES ("Scarlet Witch", "telekinesis", 1);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Captain Marvel", "superhuman", 2);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Thor", "demigod", 3);
+ INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Captain America", "super-soldier", 4);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES("Iron Man", "genius-level intelligence", 5);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Doctor Strange", "sorcerer", 6);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Spider Man", "strengh of a spider", 7);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Black Panther", "hightened abilities", 8);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Hulk", "genius, strenght", 9);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Vision", "conscious-android", 10);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Black Widow", "assassin, spie", 11);
+INSERT INTO Superpowers (character_name, powers, power_ranking)
+    VALUES ("Hawkeye", "expert marksman", 12);
+
+    
+
+/* who is the peoples faorite avenger? */
+/* is the favorite also the most powerful? */ 
+/* do they posses supernatural powers */
+
+
+select name, popularity, power_ranking from Avengers
+join Superpowers
+on Avengers.name = Superpowers.character_name
+order by popularity, power_ranking asc;
+
+
+
