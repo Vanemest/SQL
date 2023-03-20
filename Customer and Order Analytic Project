@@ -45,8 +45,39 @@ where FebSales.Quantity>2
 and length(orderid)=6 
 and orderid <>'Order ID' 
 
-8. List all the products sold in Los Angeles in February, and include how many of each were sold.
+Advanced Customer & Order Analytics
+
+1. List all the products sold in Los Angeles in February, and include how many of each were sold.
 select distinct Product, location, sum(Quantity)
 from BIT_DB.FebSales
 where location like '%Los Angeles%'
 group by Product
+
+2. How many of each type of headphone were sold in February?
+select distinct Product, sum(Quantity)
+from BIT_DB.FebSales
+where Product like '%Headphones%'
+group by Product
+
+3. What was the average amount spent per account in February? 
+select avg(quantity*price)
+from BIT_DB.FebSales 
+left join BIT_DB.customers 
+on FebSales.orderid=customers.order_id
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID'
+
+4. What was the average quantity of products purchased per account in February?
+select avg(Quantity)
+from BIT_DB.FebSales
+left join BIT_DB.customers
+on FebSales.orderID=customers.order_id
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID'
+
+5. Which product brought in the most revenue in January and how much revenue did it bring in total?
+select Product, sum(price*Quantity)
+from BIT_DB.JanSales
+group by Product 
+order by desc
+limit 1
